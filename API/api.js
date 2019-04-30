@@ -17,7 +17,7 @@ const get_platforms = async () => Console.find();
 const get_games = async () => Game.find();
 const write_platform = async new_platform => await (new Console(new_platform)).save;
 const write_game = async new_game => await (new Game(new_game)).save;
-const write_post = async new_post => await (new Post(new_post)).save;
+const write_post = async new_post => await (new Post(new_post)).save();
 
 const get_platform = async id_or_name =>
     Console
@@ -131,6 +131,7 @@ api_router
         res.status(200).send(await get_posts())
     )
     .post('/posts', async (req, res) => {
+        console.log("entered");
         req.body.date = new Date();
         const write_res = write_post(req.body);
         return write_res ? res.status(201).send(write_res) : res.status(400).send();

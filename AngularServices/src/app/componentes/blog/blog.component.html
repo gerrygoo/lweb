@@ -8,12 +8,15 @@
       <p class="card-text">{{post.content}}</p>
     </div>
   </div>
+  <div class="card" style="width: 90%; margin: 10px auto">
+    <div class="card-body">
+      <h5 class="card-title">Create a new post</h5>
+      <input class="form-control mr-sm-2" [(ngModel)]="author" [ngModelOptions]="{standalone: true}"
+        placeholder="Author">
+      <textarea class="form-control mr-sm-2" [(ngModel)]="content" [ngModelOptions]="{standalone: true}"
+        placeholder="Content" style="margin-top: 10px">
+      </textarea>
+      <a class="btn btn-primary" style="margin: 10px; margin-left: 0" (click)="submit()">Agregar Post</a>
+    </div>
+  </div>
 </div>
-
-<form class="form-inline my-2 my-lg-0 card">
-  <input class="form-control mr-sm-2" style="width: 90%" [(ngModel)]="author" [ngModelOptions]="{standalone: true}"
-    placeholder="Author">
-  <textarea class="form-control mr-sm-2" style="width: 90%" [(ngModel)]="content" [ngModelOptions]="{standalone: true}">
-  </textarea>
-</form>
-<a class="btn btn-primary" (click)="submit()">Agregar Post</a>

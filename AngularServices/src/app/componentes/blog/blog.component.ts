@@ -18,8 +18,11 @@ export class BlogComponent implements OnInit {
     this.posts = this.consolasService.obtienePosts().toPromise();
   }
 
-  submit() {
-    console.log(this.author);
-    console.log(this.content);
+  async submit() {
+    await this.consolasService.escribePost({
+      author: this.author,
+      content: this.content
+    });
+    this.posts = this.consolasService.obtienePosts().toPromise();
   }
 }

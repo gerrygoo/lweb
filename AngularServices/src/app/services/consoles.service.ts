@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const ENDPOINT_URL = 'http://localhost:8585/api';
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 
 @Injectable()
 export class ConsolasService {
@@ -47,8 +48,8 @@ export class ConsolasService {
         return this.httpClient.post<any>(`${ENDPOINT_URL}/game`, juego);
     }
 
-    escribePost(post: Post): Observable<any> {
-        return this.httpClient.post<any>(`${ENDPOINT_URL}/game`, post);
+    escribePost(post: Omit<Post, 'date'>): Promise<any> {
+        return this.httpClient.post<any>(`${ENDPOINT_URL}/posts`, post).toPromise();
     }
 
 }
