@@ -1,0 +1,6 @@
+<img class="card-img-top" [src]="(juego | async).cover">
+<ul class="list-group">
+  <li class="list-group-item">{{(juego | async).name}}</li>
+  <li class="list-group-item">{{(juego | async).developer}}</li>
+  <li class="list-group-item">{{(juego | async).date}}</li>
+</ul>

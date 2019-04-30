@@ -1,0 +1,19 @@
+<h1>Blogs</h1>
+<hr>
+<div class="row">
+  <div class="card" style="width: 90%; margin: 10px auto" *ngFor="let post of (posts | async);">
+    <div class="card-body">
+      <h5 class="card-title">{{post.author}}</h5>
+      <p class="card-text">{{post.date | date}}</p>
+      <p class="card-text">{{post.content}}</p>
+    </div>
+  </div>
+</div>
+
+<form class="form-inline my-2 my-lg-0 card">
+  <input class="form-control mr-sm-2" style="width: 90%" [(ngModel)]="author" [ngModelOptions]="{standalone: true}"
+    placeholder="Author">
+  <textarea class="form-control mr-sm-2" style="width: 90%" [(ngModel)]="content" [ngModelOptions]="{standalone: true}">
+  </textarea>
+</form>
+<a class="btn btn-primary" (click)="submit()">Agregar Post</a>

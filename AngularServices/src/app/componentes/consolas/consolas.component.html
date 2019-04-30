@@ -1,0 +1,13 @@
+<h1>Mis Consolas</h1>
+<hr>
+<div class="row">
+  <div class="card" style="width: 18rem;" *ngFor="let consola of (consolas | async);">
+    <img class="card-img-top" [src]="consola.image" [alt]="consola.name">
+    <div class="card-body">
+      <h5 class="card-title">{{consola.name}}</h5>
+      <p class="card-text">{{consola.techSpecs}}</p>
+      <p class="card-text">{{consola.id}}</p>
+      <a [routerLink]="['/infoconsola', consola.id]" class="btn btn-primary">Información</a>
+    </div>
+  </div>
+</div>

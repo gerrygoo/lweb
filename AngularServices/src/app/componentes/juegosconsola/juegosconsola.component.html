@@ -1,0 +1,11 @@
+<!-- <h1>{{(consola | async).name}}</h1> -->
+<hr>
+<div class="row" *ngFor="let juego of (juegos | async);">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="juego.cover" alt="PC Master Race">
+    <div class="card-body">
+      <h5 class="card-title">{{juego.name}}</h5>
+      <a [routerLink]="['/juego' , juego.id]" class="btn btn-primary">Ficha Técnica</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{(consola | async).name}}</h1>
+    <p class="lead">{{(consola | async).techSpecs}}</p>
+  </div>
+  <a [routerLink]="['/juegos', id]" class="btn btn-primary">Juegos</a>
+</div>
