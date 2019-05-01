@@ -14,6 +14,7 @@ export class NewplatformComponent implements OnInit {
 
   constructor(public platformService: ConsolasService) {
     this.form = new FormGroup({
+      'id': new FormControl(''),
       'name': new FormControl(''),
       'image': new FormControl(''),
       'techSpecs': new FormControl(''),
@@ -26,7 +27,9 @@ export class NewplatformComponent implements OnInit {
   async submit() {
     console.log(await this.platformService.escribeConsola({
       ...this.form.value,
+      id: parseInt(this.form.value.id),
       games_ids: this.form.value.games_ids ? this.form.value.games_ids.split(',') : [ ],
     }));
+    this.form.reset();
   }
 }

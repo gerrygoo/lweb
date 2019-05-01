@@ -1,5 +1,17 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <div class="form-group row">
+    <label class="col-2 col-form-label">id</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="id"
+        formControlName="id"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row">
     <label class="col-2 col-form-label">Nombre</label>
     <div class="col-8">
       <input
@@ -53,5 +65,4 @@
       <button type="submit" class="btn btn-outline-primary">Save</button>
     </div>
   </div>
-
 </form>

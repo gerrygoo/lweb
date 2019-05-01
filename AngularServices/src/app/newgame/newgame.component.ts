@@ -28,10 +28,12 @@ export class NewgameComponent implements OnInit {
   async submit() {
     console.log(await this.platformService.escribeJuego({
       ...this.form.value,
+      id: parseInt(this.form.value.id),
       images: this.form.value.images ? this.form.value.images.split('|') : [ ],
       links: this.form.value.links ? this.form.value.links.split('|') : [ ],
       date: new Date(),
     }));
+    this.form.reset();
   }
 
   ngOnInit() {

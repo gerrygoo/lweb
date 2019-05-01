@@ -4,12 +4,11 @@ const
     required = unique = trim = true,
     min = 1;
 
-const capitalize_first = str => str[0].toUpperCase() + str.slice(1);
-
 const game_schema = mongoose.Schema({
-    name: { type: String, required, trim, get: capitalize_first },
-    developer: { type: String, required, trim },
-    cover: { type: String, required, trim },
+    id: { type: Number, required, trim },
+    name: { type: String, required, trim, required },
+    developer: { type: String, required, trim, required },
+    cover: { type: String, required, trim, required },
     images: { type: [{ type: String, trim }]  },
     links: { type: [{ type: String, trim }]  },
     date: { type: Date, required },

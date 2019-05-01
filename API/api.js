@@ -17,27 +17,30 @@ const
 const get_platforms = async () => Console.find();
 const get_games = async () => Game.find();
 
-const write_platform = async new_platform => {
+const write_platform = async ({id, ...new_platform}) => {
     try {
-        const res = await (new Console(new_platform)).save();
+        const res = await (new Console({id: parseInt(id), ...new_platform})).save();
         return res;
     } catch (e) {
+        console.log(e);
         return false;
     }
 }
-const write_game = async new_game => {
+const write_game = async ({id, ...new_game}) => {
     try {
-        const res = await (new Game(new_game)).save();
+        const res = await (new Game({id: parseInt(id), ...new_game})).save();
         return res;
     } catch (e) {
+        console.log(e);
         return false;
     }
 }
-const write_post = async new_post => {
+const write_post = async (new_post) => {
     try {
         const res = await (new Post(new_post)).save();
         return res;
     } catch (e) {
+        console.log(e);
         return false;
     }
 }

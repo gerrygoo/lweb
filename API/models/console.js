@@ -7,6 +7,7 @@ const
 const capitalize_first = str => str[0].toUpperCase() + str.slice(1);
 
 const console_schema = mongoose.Schema({
+    id: { type: Number, required, trim },
     name: { type: String, required, trim, get: capitalize_first },
     image: { type: String, required, trim },
     techSpecs: { type: String, required, trim },

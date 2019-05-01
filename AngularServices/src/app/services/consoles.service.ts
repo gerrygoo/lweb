@@ -47,7 +47,7 @@ export class ConsolasService {
     escribeJuego(juego: Juego): Promise<any> {
         return this.httpClient.post<any>(`${ENDPOINT_URL}/game`, juego).toPromise();
     }
-  
+
     escribePost(post: Omit<Post, 'date'>): Promise<any> {
         return this.httpClient.post<any>(`${ENDPOINT_URL}/posts`, post).toPromise();
     }
