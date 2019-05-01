@@ -42,6 +42,7 @@ const write_post = async new_post => {
     }
 }
 
+
 const get_platform = async id_or_name =>
     Console
         .findOne({
@@ -156,6 +157,7 @@ api_router
         res.status(200).send(await get_posts())
     )
     .post('/posts', async (req, res) => {
+        console.log("entered");
         req.body.date = new Date();
         const write_res = write_post(req.body);
         return write_res ? res.status(201).send(write_res) : res.status(400).send();
