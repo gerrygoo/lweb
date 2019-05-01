@@ -10,25 +10,23 @@ import { ConsolasService } from '../services/consoles.service';
 })
 export class NewplatformComponent implements OnInit {
 
-  form: FormGroup = new FormGroup({
-    'name': new FormControl(),
-    'image': new FormControl(),
-    'techSpecs': new FormControl(),
-    'games_ids': new FormArray([
-      new FormControl(),
-      new FormControl(),
-      new FormControl(),
-    ]),
-  });
+  form: FormGroup;
 
-  constructor(public platformService: ConsolasService) { }
+  constructor(public platformService: ConsolasService) {
+    this.form = new FormGroup({
+      'name': new FormControl(''),
+      'image': new FormControl(''),
+      'techSpecs': new FormControl(''),
+      'games_ids': new FormControl(''),
+    });
+  }
 
   ngOnInit() { }
 
-  submit() {
-    this
-    .platformService
-    .escribeConsola(this.form .value);
+  async submit() {
+    console.log(await this.platformService.escribeConsola({
+      ...this.form.value,
+      games_ids: this.form.value.games_ids ? this.form.value.games_ids.split(',') : [ ],
+    }));
   }
-
 }

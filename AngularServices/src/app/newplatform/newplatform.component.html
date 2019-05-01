@@ -1,52 +1,57 @@
-<!-- <form [formGroup]="form" (ngSubmit)="submit()">
-  <div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Nombre</label>
-      <div class="col-8">
-        <input class="form-control" type="text" placeholder="Nombre" formControlName="name">
-      </div>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Nombre</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Nombre"
+        formControlName="name"
+      />
     </div>
   </div>
 
-  <div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">Imagen</label>
-      <div class="col-8">
-        <input class="form-control" type="text" placeholder="Imagen" formControlName="image">
-      </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Imagen</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Imagen"
+        formControlName="image"
+      />
     </div>
   </div>
 
-  <div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">TechSpecs</label>
-      <div class="col-8">
-        <input class="form-control" type="text" placeholder="TechSpecs" formControlName="techSpecs">
-      </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">TechSpecs</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="TechSpecs"
+        formControlName="techSpecs"
+      />
     </div>
   </div>
 
-  <div>
-    <div class="form-group row">
-      <label class="col-2 col-form-label">TechSpecs</label>
-      <div class="col-8">
-        <input class="form-control" type="text" placeholder="TechSpecs" formControlName="techSpecs">
-      </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Games</label>
+    <div class="col-8">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="games"
+        formControlName="games_ids"
+      />
     </div>
   </div>
 
-  <div formArrayName="games_ids">
-
-    <div *ngFor="let _ of games_ids.controls; index as i">
-      <div class="form-group row">
-        <label class="col-2 col-form-label">Juego {{i + 1}}</label>
-        <div class="col-8">
-          Id: <input class="form-control" type="text" placeholder="Id" formControlName="i">
-        </div>
-      </div>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary">Save</button>
     </div>
-
   </div>
 
-
-</form> -->
+</form>

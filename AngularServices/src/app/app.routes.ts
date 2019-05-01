@@ -10,6 +10,7 @@ import { JuegoComponent } from './componentes/juego/juego.component';
 import { BlogComponent } from './componentes/blog/blog.component';
 
 import { NewplatformComponent } from './newplatform/newplatform.component';
+import { NewgameComponent } from './newgame/newgame.component';
 
 const APP_ROUTES: Routes = [
 
@@ -17,11 +18,14 @@ const APP_ROUTES: Routes = [
   { path: 'principal', component: PrincipalComponent },
   { path: 'acercade', component: AcercadeComponent },
   { path: 'consolas', component: ConsolasComponent },
+
+  { path: 'consolas/new', component: NewplatformComponent },
+  { path: 'juegos/new', component: NewgameComponent },
+
   { path: 'infoconsola/:id', component: InfoconsolaComponent },
   { path: 'juego/:idjuego', component: JuegoComponent },
   { path: 'juegos/:idconsola', component: JuegosconsolaComponent },
   { path: 'consolas/:search', component: ConsolasComponent },
-  { path: 'consolas/new', component: NewplatformComponent },
   { path: 'juegos/like/:search', component: JuegosconsolaComponent },
   { path: 'blogs', component: BlogComponent },
 

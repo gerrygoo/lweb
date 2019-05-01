@@ -13,7 +13,7 @@ import { JuegoComponent } from './componentes/juego/juego.component';
 
 import { ConsolasService } from './services/consoles.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewplatformComponent } from './newplatform/newplatform.component';
 import { BlogComponent } from './componentes/blog/blog.component';
 import { NewgameComponent } from './newgame/newgame.component';
@@ -36,7 +36,8 @@ import { NewgameComponent } from './newgame/newgame.component';
     BrowserModule,
     APP_ROUTING,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     ConsolasService
