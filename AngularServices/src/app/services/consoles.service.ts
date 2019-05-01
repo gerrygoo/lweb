@@ -40,14 +40,14 @@ export class ConsolasService {
         return this.httpClient.get<Post[]>(`${ENDPOINT_URL}/posts/`);
     }
 
-    escribeConsola(consola: Consola): Observable<any> {
-        return this.httpClient.post<any>(`${ENDPOINT_URL}/platform`, consola);
+    escribeConsola(consola: Consola): Promise<any> {
+        return this.httpClient.post<any>(`${ENDPOINT_URL}/platform`, consola).toPromise();
     }
 
-    escribeJuego(juego: Juego): Observable<any> {
-        return this.httpClient.post<any>(`${ENDPOINT_URL}/game`, juego);
+    escribeJuego(juego: Juego): Promise<any> {
+        return this.httpClient.post<any>(`${ENDPOINT_URL}/game`, juego).toPromise();
     }
-
+  
     escribePost(post: Omit<Post, 'date'>): Promise<any> {
         return this.httpClient.post<any>(`${ENDPOINT_URL}/posts`, post).toPromise();
     }

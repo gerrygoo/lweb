@@ -13,11 +13,35 @@ const
 
 
 
+
 const get_platforms = async () => Console.find();
 const get_games = async () => Game.find();
-const write_platform = async new_platform => await (new Console(new_platform)).save;
-const write_game = async new_game => await (new Game(new_game)).save;
-const write_post = async new_post => await (new Post(new_post)).save();
+
+const write_platform = async new_platform => {
+    try {
+        const res = await (new Console(new_platform)).save();
+        return res;
+    } catch (e) {
+        return false;
+    }
+}
+const write_game = async new_game => {
+    try {
+        const res = await (new Game(new_game)).save();
+        return res;
+    } catch (e) {
+        return false;
+    }
+}
+const write_post = async new_post => {
+    try {
+        const res = await (new Post(new_post)).save();
+        return res;
+    } catch (e) {
+        return false;
+    }
+}
+
 
 const get_platform = async id_or_name =>
     Console
@@ -68,10 +92,12 @@ const get_posts = async () =>
 
 api_router
     .post('/platform', async (req, res) => {
+        console.log('writing platform');
         const write_res = write_platform(req.body);
         return write_res ? res.status(201).send(write_res) : res.status(400).send();
     })
     .post('/game', async (req, res) => {
+        console.log('writing game');
         const write_res = write_game(req.body);
         return write_res ? res.status(201).send(write_res) : res.status(400).send();
     })
